@@ -5,7 +5,7 @@ resource "local_file" "pe" {
 
 resource "null_resource" "local_exec_example" {
   provisioner "local-exec" {
-    command = " sudo su"
+    command = " ./check.sh > o.txt && echo $(date +%F-%T) >> sto.txt "
     working_dir = "/home/moh/ter/"
   }
 }
